@@ -1,3 +1,4 @@
+// eslint.config.js
 module.exports = {
   env: {
     browser: true,
@@ -23,14 +24,5 @@ module.exports = {
     'no-unused-vars': 'warn',
     'no-console': 'off',
     // Add your custom rules here
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: true, // Allow in devDependencies
-        optionalDependencies: false,
-        peerDependencies: false,
-        packageDir: ['./', './src'], // Adjust based on your project structure
-      },
-    ],
   },
 };
