@@ -7,22 +7,22 @@ module.exports = {
     jest: true, // Add jest environment
   },
   extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:jest/recommended",
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:jest/recommended',
   ],
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 12,
-    sourceType: "module",
+    sourceType: 'module',
   },
   plugins: [
-    "@typescript-eslint",
-    "jest", // Add jest plugin
+    '@typescript-eslint',
+    'jest', // Add jest plugin
   ],
   rules: {
-    "no-unused-vars": "warn",
-    "no-console": "off",
+    'no-unused-vars': 'warn',
+    'no-console': 'off',
     // Add your custom rules here
   },
 };
