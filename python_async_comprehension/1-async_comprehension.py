@@ -11,7 +11,4 @@ async def async_comprehension() -> List[float]:
     '''
     Function for async comprehension
     '''
-    result = []
-    async for i in async_generator():
-        result.append(i)
-    return result
+    return [i async for i in async_generator()]
