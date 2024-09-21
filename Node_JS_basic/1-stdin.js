@@ -1,14 +1,12 @@
-// 1-stdin.js
+const std = require('process');
 
-process.stdout.write(`Welcome to Holberton School, what is your name?\n`);
-
-process.stdin.on('readable', () => {
-  const name = process.stdin.read();
+std.stdout.write('Welcome to Holberton School, what is your name?\n');
+std.stdin.on('readable', () => {
+  const name = std.stdin.read();
   if (name) {
-    process.stdout.write(`Your name is: ${name}`);
+    std.stdout.write(`Your name is: ${name}`);
   }
 });
-
-process.stdin.on('end', () => {
+std.stdin.on('end', () => {
   console.log('This important software is now closing');
 });
