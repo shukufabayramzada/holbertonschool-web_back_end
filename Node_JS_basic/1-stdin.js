@@ -1,15 +1,14 @@
 // 1-stdin.js
-const os = require('os');
 
-process.stdout.write(
-  `Welcome to Holberton School, what is your name?${os.EOL}`
-);
+process.stdout.write(`Welcome to Holberton School, what is your name?\n`);
 
-process.stdin.on('data', (input) => {
-  const name = input.toString().trim();
-  process.stdout.write(`Your name is: ${name}${os.EOL}`);
+process.stdin.on('readable', () => {
+  const name = process.stdin.read();
+  if (name) {
+    process.stdout.write(`Your name is: ${name}`);
+  }
+});
 
-  process.stdout.write(`This important software is now closing${os.EOL}`);
-
-  process.exit();
+process.stdin.on('end', () => {
+  console.log('This important software is now closing');
 });
