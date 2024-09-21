@@ -9,7 +9,7 @@ function countStudents(path) {
     const lines = data.split('\n').filter((line) => line.trim().length > 0);
 
     // Remove the first line (the header)
-    const header = lines.shift();
+    lines.shift(); // Removed unused 'header' variable
 
     // Initialize an object to store students by field
     const studentsByField = {};
@@ -31,12 +31,15 @@ function countStudents(path) {
 
     // Log the number of students for each field
     for (const field in studentsByField) {
-      const students = studentsByField[field];
-      console.log(
-        `Number of students in ${field}: ${
-          students.length
-        }. List: ${students.join(', ')}`
-      );
+      if (Object.prototype.hasOwnProperty.call(studentsByField, field)) {
+        // Guard for-in loop
+        const students = studentsByField[field];
+        console.log(
+          `Number of students in ${field}: ${
+            students.length
+          }. List: ${students.join(', ')}`
+        );
+      }
     }
   } catch (error) {
     // Handle file read errors
