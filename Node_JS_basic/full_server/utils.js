@@ -11,15 +11,12 @@ export default function readDatabase(path) {
           .filter((line) => line.length > 0);
         const headers = headerLine.split(',');
 
-        const listObj = lines.map((line) =>
-          line
-            .split(',')
-            .reduce(
-              (object, currentValue, index) =>
-                Object.assign(object, { [headers[index]]: currentValue }),
-              {}
-            )
-        );
+        const listObj = lines.map((line) => line
+          .split(',')
+          .reduce(
+            (object, currentValue, index) => Object.assign(object, { [headers[index]]: currentValue }),
+            {},
+          ));
 
         const groupByField = listObj.reduce((res, currentValue) => {
           res[currentValue.field] = res[currentValue.field] || [];

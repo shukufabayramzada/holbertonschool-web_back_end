@@ -12,7 +12,7 @@ export default class StudentsController {
             students.push(
               `Number of students in ${key}: ${
                 result[key].length
-              }. List: ${result[key].join(', ')}`
+              }. List: ${result[key].join(', ')}`,
             );
           });
         response.status(200);
